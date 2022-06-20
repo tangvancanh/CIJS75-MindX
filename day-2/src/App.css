@@ -1,0 +1,11 @@
+.section {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai-3</title>
+</head>
+
+<body>
+    <script>
+        // Hàm xóa phần tử bị lặp trong mảng
+        const newArray = (array) => {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length; j++) {
+                    if (array[i] == array[j] && i != j) {
+                        array.splice(i, 1);
+                    }
+                }
+            }
+            return array.sort();
+        }
+
+        // Hàm đếm số lần lặp của phần tử
+        const countArray = (array, x) => {
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (x == array[i]) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        // Bai 3
+        let arr1 = [2,2,2,2, 3, 3, 4, 4, 5, 8, 8, 9];
+
+        let arr2 = [...arr1];
+        newArray(arr2);
+
+        let max = 0;
+        let number =0;
+
+        for (let i = 0; i < arr2.length; i++) {
+            if (countArray(arr1, arr2[i]) > max) {
+                max = countArray(arr1, arr2[i]);
+                number = arr2[i];
+            }
+        }
+
+        document.write(`Input: ${arr1}`);
+        document.write(`<br/><br/>`);
+        document.write(`Ouput: Số ${number} lặp lại ${max} lần`);
+    </script>
+</body>
+
+</html>
